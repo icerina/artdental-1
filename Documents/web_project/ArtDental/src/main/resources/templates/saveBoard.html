@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Art Dental | Write</title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link href="/font-awesome/css/font-awesome.css" rel="stylesheet" th:href="@{/font-awesome/css/font-awesome.css}"/>
+    <link href="/css/animate.css" rel="stylesheet" th:href="@{/css/animate.css}"/>
+    <link href="/css/plugins/summernote/summernote.css" rel="stylesheet" th:href="@{/css/plugins/summernote/summernote.css}"/>
+    <link href="/css/plugins/summernote/summernote-bs3.css" rel="stylesheet" th:href="@{/css/plugins/summernote/summernote-bs3.css}"/>
+    <link href="/css/style.css" rel="stylesheet" th:href="@{/css/style.css}"/>
+
+</head>
+
+<body class="top-navigation">
+
+<div id="wrapper">
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom white-bg">
+            <nav class="navbar navbar-static-top" role="navigation">
+                <div class="navbar-header">
+                    <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                        <i class="fa fa-reorder"></i>
+                    </button>
+                    <a href="#" class="navbar-brand">Art Dental</a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a aria-expanded="false" role="button" href="layouts.html"> Back to main Layout page</a>
+                        </li>
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Menu item <span class="caret"></span></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Menu item <span class="caret"></span></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Menu item <span class="caret"></span></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Menu item <span class="caret"></span></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <a href="login.html">
+                                <i class="fa fa-sign-out"></i> Log out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!--<div class="wrapper wrapper-content">
+            <div class="container">
+
+        </div>-->
+
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-10">
+                <h2>Text Editor</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="index.html" th:href="@{/index}">Home</a>
+                    </li>
+                    <li>
+                        <a th:href="@{/index}">Board List</a>
+                    </li>
+                    <li class="active">
+                        <strong>Insert Board</strong>
+                    </li>
+                </ol>
+            </div>
+            <div class="col-lg-2">
+
+            </div>
+        </div>
+        <div class="wrapper wrapper-content">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Write Text</h5>
+                            <div class="ibox-tools">
+                                <!--<a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-wrench"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">Config option 1</a>
+                                    </li>
+                                    <li><a href="#">Config option 2</a>
+                                    </li>
+                                </ul>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>-->
+                            </div>
+                        </div>
+
+                        <div class="ibox-content">
+
+                            <form action="#" class="form-horizontal" th:action="@{/saveBoard}" th:object="${testBoard}" method="post" th:method="post">
+
+                                <div class="form-group"><label class="col-sm-1 control-label">Title</label>
+                                    <div class="col-sm-11"><input type="text" class="form-control" th:field="*{title}"/>
+                                        <span class="help-block m-b-none"><div th:if="${#fields.hasErrors('title')}" th:errors="*{title}" th:class="error">errors</div></span></div>
+                                </div>
+
+                                <input type="hidden" th:field="*{writer}"/>
+                                <input type="hidden" th:field="*{checked}"/>
+                                <input type="hidden" th:field="*{id}" />
+
+                                <div class="hr-line-dashed"></div>
+
+                                <div class="form-group" >
+                                    <textarea th:field="*{content}" th:class="summernote" />
+                                    <span class="help-block m-b-none"><div th:if="${#fields.hasErrors('content')}" th:errors="*{content}" th:class="error">errors</div></span>
+                                </div>
+
+                                <div class="hr-line-dashed"></div>
+
+                                <button id="save" class="btn btn-primary btn-xs" name="save" type="submit">Save</button>
+                                <button id="delete" class="btn btn-primary  btn-xs" type="submit">Delete</button>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Honeycombee Company &copy; 2014-2015
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- Mainly scripts -->
+<script type="text/javascript" src="/js/jquery-2.1.1.js" th:src="@{/js/jquery-2.1.1.js}"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+<script type="text/javascript" src="/js/plugins/metisMenu/jquery.metisMenu.js" th:src="@{/js/plugins/metisMenu/jquery.metisMenu.js}"></script>
+<script type="text/javascript" src="/js/plugins/slimscroll/jquery.slimscroll.min.js" th:src="@{/js/plugins/slimscroll/jquery.slimscroll.min.js}"></script>
+
+<!-- Custom and plugin javascript -->
+<script type="text/javascript" th:src="@{/js/inspinia.js}"></script>
+<script type="text/javascript" th:src="@{/js/plugins/pace/pace.min.js}"></script>
+
+<!-- SUMMERNOTE -->
+<script src="/js/plugins/summernote/summernote.min.js" th:src="@{/js/plugins/summernote/summernote.min.js}"></script>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    $(document).ready(function(){
+
+        $('.summernote').summernote();
+
+    });
+    var edit = function() {
+        $('.click2edit').summernote({focus: true});
+    };
+    var save = function() {
+        var aHTML = $('.click2edit').code(); //save HTML If you need(aHTML: array).
+        $('.click2edit').destroy();
+    };
+    /*]]>*/
+</script>
+
+</body>
+
+</html>

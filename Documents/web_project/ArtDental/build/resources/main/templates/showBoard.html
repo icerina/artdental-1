@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html   xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Art Dental | Show Detail</title>
+
+    <link href="/css/bootstrap.min.css" rel="stylesheet" th:href="@{/css/bootstrap.min.css}"/>
+    <link href="/font-awesome/css/font-awesome.css" rel="stylesheet" th:href="@{/font-awesome/css/font-awesome.css}"/>
+    <link href="/css/animate.css" rel="stylesheet" th:href="@{/css/animate.css}"/>
+    <link href="/css/style.css" rel="stylesheet" th:href="@{/css/style.css}"/>
+
+</head>
+
+<body class="top-navigation">
+
+<div id="wrapper">
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom white-bg">
+            <nav class="navbar navbar-static-top" role="navigation">
+                <div class="navbar-header">
+                    <button aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+                        <i class="fa fa-reorder"></i>
+                    </button>
+                    <a href="#" class="navbar-brand">Art Dental</a>
+                </div>
+                <div class="navbar-collapse collapse" id="navbar">
+                    <ul class="nav navbar-nav">
+                        <li class="active">
+                            <a aria-expanded="false" role="button" href="layouts.html"> Back to main Layout page</a>
+                        </li>
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Menu item <span class="caret"></span></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Menu item <span class="caret"></span></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Menu item <span class="caret"></span></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a aria-expanded="false" role="button" href="#" class="dropdown-toggle" data-toggle="dropdown"> Menu item <span class="caret"></span></a>
+                            <ul role="menu" class="dropdown-menu">
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                                <li><a href="">Menu item</a></li>
+                            </ul>
+                        </li>
+
+                    </ul>
+                    <ul class="nav navbar-top-links navbar-right">
+                        <li>
+                            <a href="login.html">
+                                <i class="fa fa-sign-out"></i> Log out
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!--<div class="wrapper wrapper-content">
+            <div class="container">
+
+        </div>-->
+
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-10">
+                <h2>Board Detail</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="index.html" th:href="@{/index}">Home</a>
+                    </li>
+                    <li>
+                        <a>Board List</a>
+                    </li>
+                    <li class="active">
+                        <strong>Board Detail</strong>
+                    </li>
+                </ol>
+            </div>
+            <div class="col-lg-2">
+
+            </div>
+        </div>
+
+        <div class="wrapper wrapper-content animated fadeInRight">
+                <div class="row">
+                <div class="col-lg-12">
+                    <div class="ibox float-e-margins">
+                        <div class="ibox-title">
+                            <h5>Detailed Board <small>Detailed Board.</small></h5>
+                            <div class="ibox-tools">
+                                <!--<a class="collapse-link">
+                                    <i class="fa fa-chevron-up"></i>
+                                </a>
+                                <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                    <i class="fa fa-wrench"></i>
+                                </a>
+                                <ul class="dropdown-menu dropdown-user">
+                                    <li><a href="#">Config option 1</a>
+                                    </li>
+                                    <li><a href="#">Config option 2</a>
+                                    </li>
+                                </ul>
+                                <a class="close-link">
+                                    <i class="fa fa-times"></i>
+                                </a>-->
+                            </div>
+                        </div>
+                        <div class="ibox-content">
+                            <!--<form action="#" th:action="@{/saveBoard}" th:object="${testBoard}" method="post" th:method="post">-->
+                            <form method="get" class="form-horizontal" th:object="${board}" th:action="@{|/editBoard/${board.id}|}">
+                                <div class="form-group"><label class="col-sm-1 control-label">No</label>
+
+                                    <div class="col-sm-11"><input type="text" class="form-control" th:value="${board.id}" readonly="true"/></div>
+
+                                </div>
+                                <div class="hr-line-dashed"></div>
+
+                                <div class="form-group"><label class="col-sm-1 control-label">제목</label>
+
+                                    <div class="col-sm-11"><input type="text" class="form-control" th:value="${board.title}" readonly="true"/></div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+
+                                <div class="form-group"><label class="col-sm-1 control-label">내용</label>
+
+                                    <div class="col-sm-11">
+                                        <p th:utext="${board.content}" />
+                                    </div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+
+                                <div class="form-group"><label class="col-sm-1 control-label">작성시간</label>
+
+                                    <div class="col-sm-11"><input type="text" class="form-control" th:value="${#dates.format(board.createDate, 'yyyy-MM-dd hh:mm:ss')}" readonly="true"/></div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+
+                                <div class="form-group"><label class="col-sm-1 control-label">작성자</label>
+
+                                    <div class="col-sm-11"><input type="text" class="form-control" th:value="${board.writer.name}" readonly="true"/></div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+
+
+
+
+
+    <!--
+                                <div class="form-group"><label class="col-sm-2 control-label">Help text</label>
+                                    <div class="col-sm-10"><input type="text" class="form-control"> <span class="help-block m-b-none">A block of help text that breaks onto a new line and may extend beyond one line.</span>
+                                    </div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Password</label>
+
+                                    <div class="col-sm-10"><input type="password" class="form-control" name="password"></div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Placeholder</label>
+
+                                    <div class="col-sm-10"><input type="text" placeholder="placeholder" class="form-control"></div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-lg-2 control-label">Disabled</label>
+
+                                    <div class="col-lg-10"><input type="text" disabled="" placeholder="Disabled input here..." class="form-control"></div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-lg-2 control-label">Static control</label>
+
+                                    <div class="col-lg-10"><p class="form-control-static">email@example.com</p></div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Checkboxes and radios <br/>
+                                    <small class="text-navy">Normal Bootstrap elements</small></label>
+
+                                    <div class="col-sm-10">
+                                        <div class="checkbox"><label> <input type="checkbox" value=""> Option one is this and that&mdash;be sure to include why it's great </label></div>
+                                        <div class="radio"><label> <input type="radio" checked="" value="option1" id="optionsRadios1" name="optionsRadios"> Option one is this and that&mdash;be sure to
+                                            include why it's great </label></div>
+                                        <div class="radio"><label> <input type="radio" value="option2" id="optionsRadios2" name="optionsRadios"> Option two can be something else and selecting it will
+                                            deselect option one </label></div>
+                                    </div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Inline checkboxes</label>
+
+                                    <div class="col-sm-10"><label class="checkbox-inline"> <input type="checkbox" value="option1" id="inlineCheckbox1"> a </label> <label class="checkbox-inline">
+                                        <input type="checkbox" value="option2" id="inlineCheckbox2"> b </label> <label class="checkbox-inline">
+                                        <input type="checkbox" value="option3" id="inlineCheckbox3"> c </label></div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Checkboxes &amp; radios <br/><small class="text-navy">Custom elements</small></label>
+
+                                    <div class="col-sm-10">
+                                        <div class="checkbox i-checks"><label> <input type="checkbox" value=""> <i></i> Option one </label></div>
+                                        <div class="checkbox i-checks"><label> <input type="checkbox" value="" checked=""> <i></i> Option two checked </label></div>
+                                        <div class="checkbox i-checks"><label> <input type="checkbox" value="" disabled="" checked=""> <i></i> Option three checked and disabled </label></div>
+                                        <div class="checkbox i-checks"><label> <input type="checkbox" value="" disabled=""> <i></i> Option four disabled </label></div>
+                                        <div class="radio i-checks"><label> <input type="radio" value="option1" name="a"> <i></i> Option one </label></div>
+                                        <div class="radio i-checks"><label> <input type="radio" checked="" value="option2" name="a"> <i></i> Option two checked </label></div>
+                                        <div class="radio i-checks"><label> <input type="radio" disabled="" checked="" value="option2"> <i></i> Option three checked and disabled </label></div>
+                                        <div class="radio i-checks"><label> <input type="radio" disabled="" name="a"> <i></i> Option four disabled </label></div>
+                                    </div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Inline checkboxes</label>
+
+                                    <div class="col-sm-10"><label class="checkbox-inline i-checks"> <input type="checkbox" value="option1">a </label>
+                                        <label class="checkbox-inline i-checks"> <input type="checkbox" value="option2"> b </label>
+                                        <label class="checkbox-inline i-checks"> <input type="checkbox" value="option3"> c </label></div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Select</label>
+
+                                    <div class="col-sm-10"><select class="form-control m-b" name="account">
+                                        <option>option 1</option>
+                                        <option>option 2</option>
+                                        <option>option 3</option>
+                                        <option>option 4</option>
+                                    </select>
+
+                                        <div class="col-lg-4 m-l-n"><select class="form-control" multiple="">
+                                            <option>option 1</option>
+                                            <option>option 2</option>
+                                            <option>option 3</option>
+                                            <option>option 4</option>
+                                        </select></div>
+                                    </div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group has-success"><label class="col-sm-2 control-label">Input with success</label>
+
+                                    <div class="col-sm-10"><input type="text" class="form-control"></div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group has-warning"><label class="col-sm-2 control-label">Input with warning</label>
+
+                                    <div class="col-sm-10"><input type="text" class="form-control"></div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group has-error"><label class="col-sm-2 control-label">Input with error</label>
+
+                                    <div class="col-sm-10"><input type="text" class="form-control"></div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Control sizing</label>
+
+                                    <div class="col-sm-10"><input type="text" placeholder=".input-lg" class="form-control input-lg m-b">
+                                        <input type="text" placeholder="Default input" class="form-control m-b"> <input type="text" placeholder=".input-sm" class="form-control input-sm">
+                                    </div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Column sizing</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="row">
+                                            <div class="col-md-2"><input type="text" placeholder=".col-md-2" class="form-control"></div>
+                                            <div class="col-md-3"><input type="text" placeholder=".col-md-3" class="form-control"></div>
+                                            <div class="col-md-4"><input type="text" placeholder=".col-md-4" class="form-control"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Input groups</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="input-group m-b"><span class="input-group-addon">@</span> <input type="text" placeholder="Username" class="form-control"></div>
+                                        <div class="input-group m-b"><input type="text" class="form-control"> <span class="input-group-addon">.00</span></div>
+                                        <div class="input-group m-b"><span class="input-group-addon">$</span> <input type="text" class="form-control"> <span class="input-group-addon">.00</span></div>
+                                        <div class="input-group m-b"><span class="input-group-addon"> <input type="checkbox"> </span> <input type="text" class="form-control"></div>
+                                        <div class="input-group"><span class="input-group-addon"> <input type="radio"> </span> <input type="text" class="form-control"></div>
+                                    </div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Button addons</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="input-group m-b"><span class="input-group-btn">
+                                                <button type="button" class="btn btn-primary">Go!</button> </span> <input type="text" class="form-control">
+                                        </div>
+                                        <div class="input-group"><input type="text" class="form-control"> <span class="input-group-btn"> <button type="button" class="btn btn-primary">Go!
+                                        </button> </span></div>
+                                    </div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">With dropdowns</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="input-group m-b">
+                                            <div class="input-group-btn">
+                                                <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">Action <span class="caret"></span></button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">Action</a></li>
+                                                    <li><a href="#">Another action</a></li>
+                                                    <li><a href="#">Something else here</a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#">Separated link</a></li>
+                                                </ul>
+                                            </div>
+                                            <input type="text" class="form-control"></div>
+                                        <div class="input-group"><input type="text" class="form-control">
+
+                                            <div class="input-group-btn">
+                                                <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button">Action <span class="caret"></span></button>
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li><a href="#">Action</a></li>
+                                                    <li><a href="#">Another action</a></li>
+                                                    <li><a href="#">Something else here</a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#">Separated link</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                <div class="form-group"><label class="col-sm-2 control-label">Segmented</label>
+
+                                    <div class="col-sm-10">
+                                        <div class="input-group m-b">
+                                            <div class="input-group-btn">
+                                                <button tabindex="-1" class="btn btn-white" type="button">Action</button>
+                                                <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button"><span class="caret"></span></button>
+                                                <ul class="dropdown-menu">
+                                                    <li><a href="#">Action</a></li>
+                                                    <li><a href="#">Another action</a></li>
+                                                    <li><a href="#">Something else here</a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#">Separated link</a></li>
+                                                </ul>
+                                            </div>
+                                            <input type="text" class="form-control"></div>
+                                        <div class="input-group"><input type="text" class="form-control">
+
+                                            <div class="input-group-btn">
+                                                <button tabindex="-1" class="btn btn-white" type="button">Action</button>
+                                                <button data-toggle="dropdown" class="btn btn-white dropdown-toggle" type="button"><span class="caret"></span></button>
+                                                <ul class="dropdown-menu pull-right">
+                                                    <li><a href="#">Action</a></li>
+                                                    <li><a href="#">Another action</a></li>
+                                                    <li><a href="#">Something else here</a></li>
+                                                    <li class="divider"></li>
+                                                    <li><a href="#">Separated link</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="hr-line-dashed"></div>
+                                -->
+
+                                <div class="form-group">
+                                    <div class="col-sm-4 col-sm-offset-2">
+                                        <!--<button class="btn btn-white" type="submit">Cancel</button>-->
+                                        <button class="btn btn-primary" type="submit" name="edit">Edit</button>
+                                        <button class="btn btn-primary" type="submit" name="delete">Delete</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+                <div class="row m-t-lg">
+                    <div class="col-lg-12">
+                        <div class="ibox float-e-margins">
+
+                            <div class="ibox-title">
+                                <h5>댓글</h5>
+                                <div class="ibox-tools">
+                                    <a class="collapse-link">
+                                        <i class="fa fa-chevron-up"></i>
+                                    </a>
+
+                                </div>
+                            </div>
+
+                            <div class="ibox-content">
+
+                                <div>
+
+                                    <div class="chat-form">
+                                        <form method="post" class="form-horizontal" th:object="${comment}" th:action="@{|/editBoard/${board.id}|}">
+                                            <div class="form-group">
+                                                <textarea class="form-control" placeholder="Message" required="true" name="commentContent" th:field="*{commentContent}"></textarea>
+                                            </div>
+                                            <div class="text-right">
+                                                <button type="submit" class="btn btn-sm btn-primary m-t-n-xs" name="saveComment"><strong>Send message</strong></button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <div class="chat-activity-list">
+
+                                            <div  th:each="comment : ${board.comments}">
+                                                <form class="chat-element" method="post" th:object="${comment}" th:action="@{|/editBoard/${board.id}/${comment.id}|}">
+
+                                                <div class="pull-left">
+                                                    <img src="/img/a1.jpg" class="img-circle" width="50px" height="50px" alt="image" />
+                                                </div>
+                                                <div class="media-body ">
+                                                    <strong><p th:text="*{commenter.name}" /></strong>
+
+                                                    <p class="m-b-xs" th:utext="*{commentContent}">
+                                                    </p>
+                                                    <small class="text-muted">
+                                                        <p th:text="*{#dates.format(createDate, 'yyyy-MM-dd hh:mm:ss')}" />
+                                                    </small>
+
+                                                </div>
+                                                <div class="text-right">
+                                                    <button type="submit" class="btn btn-sm btn-primary m-t-n-xs" name="deleteComment"><strong>Delete</strong></button>
+                                                </div>
+                                                </form>
+
+                                            </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Honeycombee Company &copy; 2014-2015
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- Mainly scripts -->
+<script type="text/javascript" src="/js/jquery-2.1.1.js" th:src="@{/js/jquery-2.1.1.js}"></script>
+<script type="text/javascript" src="/js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+<script type="text/javascript" src="/js/plugins/metisMenu/jquery.metisMenu.js" th:src="@{/js/plugins/metisMenu/jquery.metisMenu.js}"></script>
+<script type="text/javascript" src="/js/plugins/slimscroll/jquery.slimscroll.min.js" th:src="@{/js/plugins/slimscroll/jquery.slimscroll.min.js}"></script>
+
+<!-- Custom and plugin javascript -->
+<script type="text/javascript" th:src="@{/js/inspinia.js}"></script>
+<script type="text/javascript" th:src="@{/js/plugins/pace/pace.min.js}"></script>
+
+</body>
+
+</html>
